@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Inicio de sesión</h2>
+        <form>
+            <input type="text" id="username" name="username" autocomplete="off" placeholder="Nombre de usuario o correo" required>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <button type="button" onclick="login()">Ir</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username.trim() === '' || password.trim() === '') {
+                alert("Por favor, ingrese su nombre de usuario y contraseña.");
+                return;
+            } else {
+                var socialMedia = [
+                    { name: 'X', url: 'https://twitter.com' },
+                    { name: 'Facebook', url: 'https://facebook.com' },
+                    { name: 'Instagram', url: 'https://instagram.com' },
+                    { name: 'LinkedIn', url: 'https://linkedin.com' }
+                ];
+                var randomSocialMedia = socialMedia[Math.floor(Math.random() * socialMedia.length)];
+                window.location.href = randomSocialMedia.url;
+            }
+        }
+    </script>
+</body>
+</html>
